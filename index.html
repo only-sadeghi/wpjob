@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروش دامنه</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: right; /* راست چین شدن متن */
+            direction: rtl;
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px; /* افزایش اندازه پدینگ */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px; /* افزایش فاصله بین عنوان و متن */
+        }
+
+        #telegramButton {
+            background-color: #0088cc;
+            color: #fff;
+            border: none;
+            padding: 15px 30px; /* افزایش اندازه دکمه */
+            font-size: 18px; /* افزایش اندازه فونت دکمه */
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>فروش دامنه
+            <span id="domainName"></span></h1>
+        <p>برای خرید با آی دی
+            <strong>@s4d3ghi</strong>
+            تو تلگرام در ارتباط باشید.</p>
+        <button id="telegramButton">تماس با ما در تلگرام</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // استفاده از window.location برای دریافت نام دامنه از URL
+            const domainName = window.location.hostname;
+
+            // نمایش نام دامنه در المان متن و تایتل عنوان
+            document.getElementById("domainName").textContent = domainName;
+            document.title = "فروش دامنه " + domainName;
+
+            // افزودن رویداد click به دکمه تلگرام
+            document.getElementById("telegramButton").addEventListener("click", function () {
+                // لینک به تلگرام با آی دی مشخص
+                const telegramLink = "https://t.me/s4d3ghi";
+
+                // باز کردن لینک در تب جدید
+                window.open(telegramLink, "_blank");
+            });
+        });
+    </script>
+</body>
+</html>
